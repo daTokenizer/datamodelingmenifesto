@@ -9,13 +9,12 @@
 </head>
 
 <body class="stackedit">
-  <div class="stackedit__html"><h1 id="the-data-modeling-manifesto">The Data Modeling Manifesto</h1>
-    a sane path towards usable and maintainable table and event schema
+  <div class="stackedit__html"><h1 id="the-data-modeling-manifesto">The Data Modeling Manifesto</h1> a sane path towards usable and maintainable table and event schema
 <ol>
 <li>
 <h3 id="form-follows-function---business-goals-come-first-data-model-will-forever-be-derived-from-user-needs"><strong>Form Follows Function</strong> - Business goals come first<sup class="footnote-ref"><a href="#fn1" id="fnref1">1</a></sup>; Data model will forever be derived from (data) user needs:</h3>
 </li>
-  <ul>
+  <ol>
     <li>
     <p><strong>(User) business goals</strong> drive <strong>decisions</strong> that need making.</p>
     </li>
@@ -25,20 +24,22 @@
     <li>
     <p>The questions you need answered drive which <strong>data</strong> is needed (by the user) in order to answer them, and in which form. <em>This is your data model</em>.</p>
     </li>
-  </ul>
+  </ol>
 <li>
 <h3 id="data-models-are-expensive-to-maintain-so-reduce-reuse-and-merge">Data models are expensive to maintain, so: <strong>Reduce, Reuse, and Merge</strong></h3>
 </li>
-<li>
-<p><strong>Reduce</strong> the number of unique models sent downstream, it would make life simpler for your consumers. Don’t dump everything downstream, it creates usability, cost, and security issues. However, if is indeed required that additional data is to be sent, stored, and consumed, ship it, name it, tag it and document it in a manner that enables consumer to understand what it is that they are consuming, how if and when should they process the data, and how does each datapoint relate to other datapoints.</p>
-</li>
-<li>
-<p><strong>Reuse</strong> and extend common models, names, and tags instead of adding new ones whenever possible, this will minimize company-wide model span (so it is less complex overall) and will make sure your change will reach all relevant consumers.</p>
-</li>
-<li>
-<p><strong>Merge</strong> atomic data points to reflect their context -Data that is sent downstream should reflect context by consolidating several atomic data points to form a more complete picture. Grouping and aggregating data into sets, objects, lists, lines, documents, events, tables, hierarchies, or even files based on some heuristic has intrinsic value and can help consumers make sense of complex models and processes by analyzing the data that is relevant to them in its proper context.</p>
-</li>
-<li>
+  <ol>
+    <li>
+    <p><strong>Reduce</strong> the number of unique models sent downstream, it would make life simpler for your consumers. Don’t dump everything downstream, it creates usability, cost, and security issues. However, if is indeed required that additional data is to be sent, stored, and consumed, ship it, name it, tag it and document it in a manner that enables consumer to understand what it is that they are consuming, how if and when should they process the data, and how does each datapoint relate to other datapoints.</p>
+    </li>
+    <li>
+    <p><strong>Reuse</strong> and extend common models, names, and tags instead of adding new ones whenever possible, this will minimize company-wide model span (so it is less complex overall) and will make sure your change will reach all relevant consumers.</p>
+    </li>
+    <li>
+    <p><strong>Merge</strong> atomic data points to reflect their context -Data that is sent downstream should reflect context by consolidating several atomic data points to form a more complete picture. Grouping and aggregating data into sets, objects, lists, lines, documents, events, tables, hierarchies, or even files based on some heuristic has intrinsic value and can help consumers make sense of complex models and processes by analyzing the data that is relevant to them in its proper context.</p>
+    </li>
+    <li>
+  </ol>
 <h3 id="metadata-should-not-be-neglected-or-forgotten."><strong>Metadata</strong> should not be neglected or forgotten.</h3>
 <ol>
 <li><strong>Everything has its time and place</strong> - data is a transient thing, when sending data, it is true from a certain perspective (the senders’) and to some point in time (when was it recorded? When was it received? How much can you trust these timestamps?). Make sure to note both.</li>
