@@ -38,30 +38,30 @@
     <li>
     <p><strong>Merge</strong> atomic data points to reflect their context -Data that is sent downstream should reflect context by consolidating several atomic data points to form a more complete picture. Grouping and aggregating data into sets, objects, lists, lines, documents, events, tables, hierarchies, or even files based on some heuristic has intrinsic value and can help consumers make sense of complex models and processes by analyzing the data that is relevant to them in its proper context.</p>
     </li>
-    <li>
   </ol>
+<li>
 <h3 id="metadata-should-not-be-neglected-or-forgotten."><strong>Metadata</strong> should not be neglected or forgotten.</h3>
-<ol>
-<li><strong>Everything has its time and place</strong> - data is a transient thing, when sending data, it is true from a certain perspective (the senders’) and to some point in time (when was it recorded? When was it received? How much can you trust these timestamps?). Make sure to note both.</li>
-<li>" <strong>Handle with care" tags are mandatory</strong> - some data requires special treatment, whether it is <em>PII, financial, IDs, index keys,</em> or some other unique case, tagging data as such would help prevent consumers from mishandling it.</li>
-<li><strong>Sound body, sound mind</strong> - Define health metrics and smells for your data: a revenue field in a purchase event may be expected to forever contain positive numbers, a counter field may be expected to monotonically rise, etc.</li>
-</ol>
+  <ol>
+    <li><strong>Everything has its time and place</strong> - data is a transient thing, when sending data, it is true from a certain perspective (the senders’) and to some point in time (when was it recorded? When was it received? How much can you trust these timestamps?). Make sure to note both.</li>
+    <li>" <strong>Handle with care" tags are mandatory</strong> - some data requires special treatment, whether it is <em>PII, financial, IDs, index keys,</em> or some other unique case, tagging data as such would help prevent consumers from mishandling it.</li>
+    <li><strong>Sound body, sound mind</strong> - Define health metrics and smells for your data: a revenue field in a purchase event may be expected to forever contain positive numbers, a counter field may be expected to monotonically rise, etc.</li>
+  </ol>
 </li>
 <li>
 <h3 id="interface-over-implementation"><strong>Interface over Implementation</strong></h3>
-<ol>
-<li><strong>Meaning is more important than implementation</strong> - Data is a means for representing information, and that information should have a meaning. When representing information, the data types we choose can be extremely specific or extremely vague, but our business needs are exact. Prefer meaningful types and names (use your organization’s <a href="https://www.oreilly.com/library/view/domain-driven-design-tackling/0321125215/">ubiquitous language</a>!) over those that reflect internal implementation - Count is better than Integer which in turn is better than Number, UUID is better than ID which is of course better than String, Sets and Ordered Lists are better than Arrays, etc.<sup class="footnote-ref"><a href="#fn2" id="fnref2">2</a></sup>.</li>
-<li>Make sure to <strong>design your model in tandem</strong> with the intended (initial) user. <em>DO</em> suit their business goals and needs, <em>DON’T</em> accommodate for your internal implementation constraints.</li>
-<li><strong>Design it to be changed</strong> - You have no idea what will have to change in the (near OR far) future, make sure to accommodate for that (use versioning, optional fields, etc.) while keeping in mind that some things are inherent to the model and should never change (these are usually your ‘required’ fields).</li>
-</ol>
+  <ol>
+    <li><strong>Meaning is more important than implementation</strong> - Data is a means for representing information, and that information should have a meaning. When representing information, the data types we choose can be extremely specific or extremely vague, but our business needs are exact. Prefer meaningful types and names (use your organization’s <a href="https://www.oreilly.com/library/view/domain-driven-design-tackling/0321125215/">ubiquitous language</a>!) over those that reflect internal implementation - Count is better than Integer which in turn is better than Number, UUID is better than ID which is of course better than String, Sets and Ordered Lists are better than Arrays, etc.<sup class="footnote-ref"><a href="#fn2" id="fnref2">2</a></sup>.</li>
+    <li>Make sure to <strong>design your model in tandem</strong> with the intended (initial) user. <em>DO</em> suit their business goals and needs, <em>DON’T</em> accommodate for your internal implementation constraints.</li>
+    <li><strong>Design it to be changed</strong> - You have no idea what will have to change in the (near OR far) future, make sure to accommodate for that (use versioning, optional fields, etc.) while keeping in mind that some things are inherent to the model and should never change (these are usually your ‘required’ fields).</li>
+  </ol>
 </li>
 <li>
 <h3 id="data-models-systems-and-data-modeling-systems">Data, models, systems, and <strong>data modeling systems</strong></h3>
-<ol>
-<li>As data is representative of facts (as far as the source can tell) and models are derived from business needs, <strong>no data, models, or data models should be affected by changes in the data transport system(s), their design or implementation</strong>. Field names and values, event names, the result of a measurement, or a user identifier will all remain the same regardless of the system that is responsible for reporting it.</li>
-<li>To keep track of your models, <strong>a bookkeeping system (glossary, registry) must be in place, as well as the processes around it</strong>. Defining roles and responsibilities around the creation, storage and retrieval of models is key to keeping data velocity in producing and consuming teams high.</li>
-<li>Storage is cheap, compute is expensive - <strong>store partial results and aggregations in a way that would benefit future reference and use</strong>. This would lower cost of ownership and reduce model divergence, especially when managing complex model structures and analysis. The set of actions performed by a user during their 1st session using your product may be used, for example, for <em>LTV prediction</em> as well as <em>popular feature analysis</em>, and <em>churn/friction analysis</em>, separating aggregation from analysis would help optimize your pipeline for any use case and business need that may arise in the future.</li>
-</ol>
+  <ol>
+    <li>As data is representative of facts (as far as the source can tell) and models are derived from business needs, <strong>no data, models, or data models should be affected by changes in the data transport system(s), their design or implementation</strong>. Field names and values, event names, the result of a measurement, or a user identifier will all remain the same regardless of the system that is responsible for reporting it.</li>
+    <li>To keep track of your models, <strong>a bookkeeping system (glossary, registry) must be in place, as well as the processes around it</strong>. Defining roles and responsibilities around the creation, storage and retrieval of models is key to keeping data velocity in producing and consuming teams high.</li>
+    <li>Storage is cheap, compute is expensive - <strong>store partial results and aggregations in a way that would benefit future reference and use</strong>. This would lower cost of ownership and reduce model divergence, especially when managing complex model structures and analysis. The set of actions performed by a user during their 1st session using your product may be used, for example, for <em>LTV prediction</em> as well as <em>popular feature analysis</em>, and <em>churn/friction analysis</em>, separating aggregation from analysis would help optimize your pipeline for any use case and business need that may arise in the future.</li>
+  </ol>
 </li>
 </ol>
 <hr class="footnotes-sep">
