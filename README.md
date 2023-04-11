@@ -1,6 +1,3 @@
-
-# The Data Modeling Manifesto
-
 1. ### **Form Follows Function** - Business goals come first[^1]; Data model will forever be derived from (data) user needs:
    1. **(User) business goals** drive **decisions** that need making.
    1. The decision-making needs drive which **(user) questions** need answering.
