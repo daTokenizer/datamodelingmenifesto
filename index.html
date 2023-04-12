@@ -5,7 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Data Modeling Manifesto</title>
-  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body class="stackedit">
@@ -67,7 +68,7 @@
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>Data is stored for a to serve a single purpose – to meet some business needs for some consumer. Whether that consumer (=data user) is internal to the company or is a client has no effect on the process – they still have some goal or need that should be met and require the same level of diligence in modeling data for their consumption and use. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+<li id="fn1" class="footnote-item"><p>Data is stored in order to serve a single purpose – meeting <i>some</i> business needs for <i>some</i> consumer. Whether that consumer (=data user) is internal to the company or is a client has no effect on the process – they still have some goal or need that should be met and require the same level of diligence in modeling data for their consumption and use. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
 </li>
 <li id="fn2" class="footnote-item"><p>Leaving a field as String knowing sources will populate them with non-schema controlled (or worse yet, unmodelled) structured data (such as JSON, XML, dumps, etc.) through it should be avoided at all costs, as even the existence of these “path of least resistance” fields is tempting data source developers to bypass the desired modelling process. The risk posed by these fields, that there would exist some business-critical model that will not be tracked and managed as part of the normal flow of data in the company precludes any benefit one may derive from allowing such field to exist. Just like you would not allow any rouge source code to be added to a product without proper code review, version control and testing, so shouldn’t rouge data models exist in your product. <a href="#fnref2" class="footnote-backref">↩︎</a></p>
 </li>
@@ -75,8 +76,9 @@
   <br>
   <br>
   <small>
-  <p>Based on the opinions of this document's sole author: Adam Lev-Libfeld // 2023. Learn more about me at <a href="https://www.adamlev.com">www.adamlev.com</a></p>  
+  <p>Based on the opinions of this document's sole author: Adam Lev-Libfeld (as I understand the world in 2023). Learn more about me at <a href="https://www.adamlev.com">www.adamlev.com</a></p>  
   </small>
+  <a href="#" class="fa fa-github"></a>
  
 </section>
 </div>
