@@ -1355,11 +1355,15 @@ img{
 
 /* Style all font awesome icons (round) */
 .fa {
-  padding: 20px;
+  padding: 2em;
   font-size: 5em;
   text-align: center;
   text-decoration: none;
   border-radius: 50%;
+}
+
+.center {
+  display: block;
   margin-left: auto;
   margin-right: auto;
 }
